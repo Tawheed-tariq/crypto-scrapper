@@ -12,6 +12,16 @@ BOT_NAME = "crypto_data"
 SPIDER_MODULES = ["crypto_data.spiders"]
 NEWSPIDER_MODULE = "crypto_data.spiders"
 
+#playwright
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": False,
+    "timeout": 30 * 1000,  # 30 seconds
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "crypto_data (+http://www.yourdomain.com)"
@@ -62,9 +72,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "crypto_data.pipelines.CryptoDataPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "crypto_data.pipelines.CryptoDataPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
