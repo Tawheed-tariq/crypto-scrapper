@@ -16,7 +16,6 @@ from ..items import CryptoDataItem
 
 class CrypspiSpider(scrapy.Spider):
     name = "crypSpi"
-# https://coinmarketcap.com/
     def start_requests(self):
         #GET request
         yield scrapy.Request("https://www.moneycontrol.com/crypto-market/market-movers/top-cryptos/inr",
@@ -38,15 +37,18 @@ class CrypspiSpider(scrapy.Spider):
 
         for row in rows:
             cols = row.xpath('./td') # extracts all the columns present in each row
+
+            img = cols[0].xpath('./div/img/@src').extract()
+            items['image'] = img[0]
             
             name = cols[0].xpath("./div/div/div/a/text()").extract() #extracts a list which contains name and the symbol
             items['name'] = name[1]
             items['symbol'] = name[0]
 
             price = cols[1].xpath('./text()').extract() # extracts the price of the currency
-            items['price'] = price[0]
+            items['price'] = float(price[0].replace(",", ""))
 
             change = cols[2].xpath('./text()').extract()
-            items['change'] = change[0]
+            items['change'] = float(change[0].replace(",", ""))
 
             yield items
