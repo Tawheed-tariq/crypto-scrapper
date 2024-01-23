@@ -19,7 +19,7 @@ To run the spider use
 scrapy crawl crypSpi
 ```
 
-
+# set up playwright in scrapy
 Follow this step-by-step section to set up Playwright in Scrapy.
 ## 1. Set Up a Scrapy Project
 
@@ -89,7 +89,7 @@ By default, Playwright operates in headless mode. If you'd want to see the actio
 
 
 
-
+# contributions
 
 
 
