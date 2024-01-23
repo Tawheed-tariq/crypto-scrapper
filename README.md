@@ -1,4 +1,4 @@
-Follow this step-by-step section to set up Playwright in Scrapy.
+
 
 # To clone this repo
 ```
@@ -19,6 +19,8 @@ To run the spider use
 scrapy crawl crypSpi
 ```
 
+
+Follow this step-by-step section to set up Playwright in Scrapy.
 ## 1. Set Up a Scrapy Project
 
 First create a project folder and a virtual environment inside it
