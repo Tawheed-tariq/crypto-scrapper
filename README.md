@@ -14,6 +14,11 @@ install all requirements
 pip3 install -r requirements.txt
 ```
 
+To run the spider use
+```
+scrapy crawl crypSpi
+```
+
 ## 1. Set Up a Scrapy Project
 
 First create a project folder and a virtual environment inside it
@@ -80,12 +85,10 @@ By default, Playwright operates in headless mode. If you'd want to see the actio
 ```
 
 
+
+
+
+
+
+
 if you have ideas for improvements or adding features , feel free to fork , send pull requests or create issues.
-
-
-```
-
-To run the spider use
-```
-scrapy crawl crypSpi
-```
